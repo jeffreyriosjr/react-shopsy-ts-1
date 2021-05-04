@@ -23,6 +23,8 @@ type InitialStateType = {
     products: Product[];
     cart: Product[];
     product: Product | undefined;
+    // category: Product[];
     getProducts: () => void;
     getSingleProduct: (productId:number) => void;
+    getDecimalZeroes: (num:number) => string;
 };
