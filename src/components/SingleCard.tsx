@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/GlobalContext';
 import { setTypeColor } from '../services';
 
 const SingleCard = () => {
-  const { product, getSingleProduct } = useContext(GlobalContext);
+  const { product, getSingleProduct, getDecimalFormat } = useContext(GlobalContext);
   const { productId } = useParams<{ productId: string }>();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const SingleCard = () => {
                   <h3 className='card-title'>
                     {product.title}
                     <div className=''>
-                      <small className='text-info'>${product.price}</small>
+                      <small className='text-info'>${getDecimalFormat(+product.price)}</small>
                     </div>
                   </h3>
                   {/* product details */}
@@ -66,7 +66,7 @@ const SingleCard = () => {
                     <div>
                         
 
-                      <span className='badge-pill text-white mx-1' 
+                      <span className='badge-pill text-white' 
                       style={{ backgroundColor: setTypeColor(product.category) }}>
                         {product.category}
                       </span>
