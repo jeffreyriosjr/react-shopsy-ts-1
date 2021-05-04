@@ -1,7 +1,5 @@
-import { useContext, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SingleCard from '../components/SingleCard';
-import { GlobalContext } from '../context/GlobalContext';
 
 const ProductPage = () => {
 
