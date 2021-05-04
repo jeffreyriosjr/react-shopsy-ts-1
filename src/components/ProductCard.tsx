@@ -9,7 +9,7 @@ interface CardProps {
 
 const ProductCard: React.FC<CardProps> = ({ product }) => {
 
-  const { getDecimalFormat } = useContext(GlobalContext);
+  const { getDecimalZeroes } = useContext(GlobalContext);
 
   const history = useHistory();
   return (
@@ -30,7 +30,7 @@ const ProductCard: React.FC<CardProps> = ({ product }) => {
             <Link to={`/products/${product.id}`}>{product.title}</Link>
           </h5>
           <div className='d-flex justify-content-between align-items-center'>
-            <strong>${getDecimalFormat(+product.price)}</strong>
+            <strong>${getDecimalZeroes(+product.price)}</strong>
             <span className='badge badge-pill text-white' style={{ backgroundColor: setTypeColor(product.category )}}>{product.category}</span>
           </div>
         </div>

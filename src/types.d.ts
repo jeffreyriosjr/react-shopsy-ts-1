@@ -26,5 +26,5 @@ type InitialStateType = {
     // category: Product[];
     getProducts: () => void;
     getSingleProduct: (productId:number) => void;
-    getDecimalFormat: (num:number) => string;
+    getDecimalZeroes: (num:number) => string;
 };
